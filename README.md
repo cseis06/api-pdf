@@ -119,3 +119,6 @@ El modelo espera productos con la siguiente estructura:
 ### No se encuentran productos
 - Verifica que existan productos en la base de datos que cumplan los criterios
 - Revisa los filtros de la consulta en `server.js`
+
+# Nota
+- En este proyecto se reemplazaron datos delicados por genéricos.
