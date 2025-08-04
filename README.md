@@ -40,7 +40,6 @@ Visita: `http://localhost:5100/catalogo`
 Esto descargará automáticamente un PDF con todos los productos que cumplan los criterios:
 - Sin stock (cantidad = 0)
 - Con movimiento en los últimos 90 días
-- Del depósito "Central Shop"
 
 ### Endpoint de Salud
 
@@ -80,7 +79,6 @@ El modelo espera productos con la siguiente estructura:
   "precio": 1396600,
   "cantidad": 0,
   "dias_ultimo_movimiento": 7,
-  "deposito": "Central Shop",
   "categorias": [{ "nombre": "Electrodomésticos" }],
   "subcategorias": [{ "nombre": "Refrigeración" }],
   "imagenes": [{
@@ -119,6 +117,3 @@ El modelo espera productos con la siguiente estructura:
 ### No se encuentran productos
 - Verifica que existan productos en la base de datos que cumplan los criterios
 - Revisa los filtros de la consulta en `server.js`
-
-# Nota
-- En este proyecto se reemplazaron datos delicados por genéricos.

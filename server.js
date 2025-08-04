@@ -38,11 +38,10 @@ const productosEjemplo = [
     precio: 1396600,
     cantidad: 0,
     dias_ultimo_movimiento: 7,
-    deposito: 'Central Shop',
     categorias: [{ nombre: 'Electrodomésticos' }],
     subcategorias: [{ nombre: 'Refrigeración' }],
     imagenes: [{
-      url: { '1000': 'https://f.fcdn.app/imgs/22f038/www.bristol.com.py/brispy/b7da/original/catalogo/0101156_0101156_1/1920-1200/bebedero-midea-de-pie-frio-y-caliente-para-botellon-yl1533s-bebedero-midea-de-pie-frio-y-caliente-para-botellon-yl1533s.jpg' }
+      url: { '1000': '9565/0111255493/1000.webp' }
     }]
   },
   {
@@ -53,11 +52,10 @@ const productosEjemplo = [
     precio: 899900,
     cantidad: 0,
     dias_ultimo_movimiento: 15,
-    deposito: 'Central Shop',
     categorias: [{ nombre: 'Electrodomésticos' }],
     subcategorias: [{ nombre: 'Cocina' }],
     imagenes: [{
-      url: { '1000': 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT_Lc3NywvfkA6ndOaGq496BTwiuB5sXp_TyA&s' }
+      url: { '1000': '9566/sample/1000.webp' }
     }]
   },
   {
@@ -68,11 +66,10 @@ const productosEjemplo = [
     precio: 2599000,
     cantidad: 0,
     dias_ultimo_movimiento: 30,
-    deposito: 'Central Shop',
     categorias: [{ nombre: 'Electrónicos' }],
     subcategorias: [{ nombre: 'Televisores' }],
     imagenes: [{
-      url: { '1000': 'https://merkamax.com.bo/wp-content/uploads/2021/06/Televisor-UHD-4K-LG-43UP7500PSF-Merkamax.jpg' }
+      url: { '1000': '9567/sample/1000.webp' }
     }]
   },
   {
@@ -83,11 +80,10 @@ const productosEjemplo = [
     precio: 1899000,
     cantidad: 0,
     dias_ultimo_movimiento: 45,
-    deposito: 'Central Shop',
     categorias: [{ nombre: 'Electrodomésticos' }],
     subcategorias: [{ nombre: 'Lavado' }],
     imagenes: [{
-      url: { '1000': 'https://whirlpoolarg.vtexassets.com/arquivos/ids/164112/WNQ07.png?v=638747934738230000' }
+      url: { '1000': '9568/sample/1000.webp' }
     }]
   },
   {
@@ -98,11 +94,10 @@ const productosEjemplo = [
     precio: 1299000,
     cantidad: 0,
     dias_ultimo_movimiento: 60,
-    deposito: 'Central Shop',
     categorias: [{ nombre: 'Climatización' }],
     subcategorias: [{ nombre: 'Aire Acondicionado' }],
     imagenes: [{
-      url: { '1000': 'https://static.bidcom.com.ar/publicacionesML/productos/KAIREA24/1000x1000-KAIREA24.jpg' }
+      url: { '1000': '9569/sample/1000.webp' }
     }]
   }
 ];
@@ -115,11 +110,10 @@ app.get('/catalogo', async (req, res) => {
     let productos;
     
     if (mongoConnected) {
-      // Consultar productos sin stock con movimiento en últimos 90 días del depósito Central Shop
+      // Consultar productos sin stock con movimiento en últimos 90
       productos = await Producto.find({
         cantidad: 0,
-        dias_ultimo_movimiento: { $lte: 90 },
-        deposito: "Central Shop"
+        dias_ultimo_movimiento: { $lte: 90 }
       }).lean();
       console.log(`Encontrados ${productos.length} productos desde MongoDB`);
     } else {

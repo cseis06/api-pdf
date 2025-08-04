@@ -1,6 +1,7 @@
 const React = require('react');
 const { Document, Page, Text, View, StyleSheet, Image, Font } = require('@react-pdf/renderer');
 
+
 // Estilos del PDF
 const styles = StyleSheet.create({
   page: {
@@ -209,7 +210,7 @@ const CatalogoPDF = ({ productos }) => {
         ),
         // Footer
         React.createElement(Text, { style: styles.footer },
-          'Central Shop - Catálogo generado automáticamente'
+          'Catálogo generado automáticamente'
         ),
         // Número de página
         React.createElement(Text, { style: styles.pageNumber },
